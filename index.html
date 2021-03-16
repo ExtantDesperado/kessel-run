@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<head>
+		<title>Maze</title>
+	</head>
+	<body>
+		<div id="homeScreen" class="active screen">
+			<div class="menu">
+				<div class="title">The Kessel Run</div>
+				<button type="button" id="newGameButton">New Game</button>
+				<button type="button" id="highScoresButton">High Scores</button>
+				<button type="button" id="aboutButton">About</button>
+			</div>
+		</div>
+		<div id="highScoresScreen" class="screen">
+			<div class="tabBar">
+				<button type="button" id="scores5x5Button" class="tab currentTab">5x5 Scores</button>
+				<button type="button" id="scores10x10Button" class="tab">10x10 Scores</button>
+				<button type="button" id="scores15x15Button" class="tab">15x15 Scores</button>
+				<button type="button" id="scores20x20Button" class="tab">20x20 Scores</button>
+			</div>
+			<table id="highScoresTable"></table>
+			<button type="button" class="homeButton">Back</button>
+		</div>
+		<div id="aboutScreen" class="screen">
+			<p>Created by Garrett Johnson for CS 5410.</p>
+			<p>May the Force be with you.</p>
+			<button type="button" class="homeButton">Back</button>
+		</div>
+		<div id="mazeSizeScreen" class="screen">
+			<div class="menu">
+				<button type="button" id="5x5Button">5 x 5</button>
+				<button type="button" id="10x10Button">10 x 10</button>
+				<button type="button" id="15x15Button">15 x 15</button>
+				<button type="button" id="20x20Button">20 x 20</button>
+				<button type="button" class="homeButton">Back</button>
+			</div>
+		</div>
+		<div id="gameScreen" class="screen">
+			<div id="gameContent">
+				<div id="gameConsole">
+					<p id="timerDisplay"></p>
+					<p id="stepCounter"></p>
+				</div>
+				<canvas id="canvas" height="500" width="500">
+			</div>
+			<div class="horizontalMenu">
+				<button type="button" id="gameHomeButton" class="homeButton">Quit</button>
+				<button type="button" id="retryButton">Retry</button>
+				<button type="button" id="gameToHighScoresButton">High Scores</button>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			MazeGame = {
+				screens: {},
+				game: {
+					canvas: document.getElementById('canvas')
+				}
+			};
+		</script>
+		<script type="text/javascript" src="scripts/inputManager.js"></script>
+		<script type="text/javascript" src="scripts/maze.js"></script>
+		<script type="text/javascript" src="scripts/solutionPath.js"></script>
+		<script type="text/javascript" src="scripts/character.js"></script>
+		<script type="text/javascript" src="scripts/highscores.js"></script>
+		<script type="text/javascript" src="scripts/gameLoop.js"></script>
+		<script type="text/javascript" src="scripts/screens.js"></script>
+	</body>
+</html>
